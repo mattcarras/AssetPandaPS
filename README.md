@@ -1,22 +1,22 @@
 # AssetPandaPS
 Powershell API Implementation for AssetPanda's RESTful API
 
-All functions have been tested working successfully in our AssetPanda environment. Your mileage may vary.
+All functions have been tested working successfully in our AssetPanda environment for syncing assets with SCCM and AD. Your mileage may vary.
 
 ## Implemented Functions
 Use `get-help <Function>` for more information about each function (e.g. `get-help Connect-APSession`). You must call the script at least once to register the function help.
 
-- Connect-APSession
-- Export-APCredentials
-- Get-APEntityMap
-- Search-APObject
-- Get-APObject
-- Get-APObjectsAll
-- Update-APObject
-- New-APObject
-- Archive-APObject
-- Remove-APObject
-- Format-ExceptionResponse
+- `Connect-APSession`
+- `Export-APCredentials`
+- `Get-APEntityMap`
+- `Search-APObject`
+- `Get-APObject`
+- `Get-APObjectsAll`
+- `Update-APObject`
+- `New-APObject`
+- `Archive-APObject`
+- `Remove-APObject`
+- `Format-ExceptionResponse`
 
 ## Usage
 `Connect-APSession` is used for OAuth authorization and to initialize the script's session variable. Use `Export-APCredentials` to export your credentials to an XML file with encrypted values. You can then give call `Connect-APSession` with the saved credentials using the `-CredXML <filepath>` parameter.
@@ -34,7 +34,7 @@ try {
 ```
 
 ## Field Name Mapping
-Returned objects will have their internal field names within AssetPanda, IE "field_1" instead of whatever its user-defined value may be. The Get-APEntityMap function provides a two-way mapping of user-defined fields ("fields") and AssetPanda's internal field names ("ap_fields"). Both include a 1:1 mapping for known built-in fields, some of which are only writable by the REST API (such as "integ_ad_sid"). Example:
+Returned objects will have their internal field names within AssetPanda, IE "field_1" instead of whatever its user-defined value may be. The `Get-APEntityMap` function provides a two-way mapping of user-defined fields ("fields") and AssetPanda's internal field names ("ap_fields"). Both include a 1:1 mapping for known built-in fields, some of which are only writable by the REST API (such as "integ_ad_sid"). Example:
 ```
 PS> Get-APObject -ObjectID "123ab456cd789ef01gh23i45"
 {
@@ -80,6 +80,8 @@ Double-check with AssetPanda support for your environment's API limits. Last I c
 
 ## TODO
 Convert into PowerShell module and upload to PSGallery.
+
+Upload examples of syncing assets exported from SCCM and AD.
 
 ## Links
 AssetPanda API reference: https://api.assetpanda.com/api-docs/v2
