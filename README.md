@@ -19,7 +19,7 @@ Use `get-help <Function>` for more information about each function (e.g. `get-he
 - `Format-ExceptionResponse`
 
 ## Usage
-`Connect-APSession` is used for OAuth authorization and to initialize the script's session variable. Use `Export-APCredentials` to export your credentials to an XML file with encrypted values. You can then give call `Connect-APSession` with the saved credentials using the `-CredXML <filepath>` parameter.
+`Connect-APSession` is used for OAuth authorization and to initialize the script's session variable. Use `Export-APCredentials` to export your credentials to an XML file with encrypted values. You can then call `Connect-APSession` with the saved credentials using the `-CredXML <filepath>` parameter.
 
 ```
 . .\AssetPandaPS.ps1
